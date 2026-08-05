@@ -1,8 +1,7 @@
-import Home from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
 
 export default function App() {
   return (
-    <Home />
-    
+    <AboutPage />
   );
 };
