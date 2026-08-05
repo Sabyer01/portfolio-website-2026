@@ -17,30 +17,35 @@ export default function AboutPage() {
 
                 {/* ================= ABOUT ME (STATIC) ================= */}
 
-                <div className="grid grid-cols-[0.5fr_1.5fr] gap-10 items-center py-10">
+                <div className="grid grid-cols-[0.55fr_1.45fr] gap-3 items-start py-10">
 
                     <div className="m-4">
                         <div className="flex items-center justify-center">
                             <img
                                 src="src/assets/diploma.jpg"
                                 alt="Profile"
-                                className="w-[180px] h-[200px] rounded-sm object-cover border border-th-descrip hover:scale-105 transition duration-300"
+                                className="h-full w-auto rounded-sm object-cover border border-th-descrip hover:scale-105 transition duration-300"
                             />
                         </div>
                     </div>
 
-                    <div className="m-4 h-[200px]">
+                    <div className="m-4">
     <div className="flex h-full flex-col justify-between items-start">
 
         {/* Top */}
-        <div>
+        <div className='flex flex-col'>
             <span className="text-md font-bold text-th-white">
-                About Me
+                Xavier Gelligan
             </span>
-        </div>
+
+             <time className="text-sm font-medium text-th-border">
+                                        Fullstack Developer
+            </time>
+
+        
 
         {/* Bottom */}
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-2 pt-4">
             <p className="text-sm font-medium text-justify text-th-owhite">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -53,6 +58,7 @@ export default function AboutPage() {
                 esse cillum dolore eu fugiat nulla pariatur.
                 Excepteur sint occaecat cupidatat non proident.
             </p>
+            </div>
         </div>
         </div>
     </div>
@@ -80,77 +86,87 @@ export default function AboutPage() {
 
                     {activeTab === "Internship" && (
 
-                        <div className="grid grid-cols-[0.5fr_1.5fr] gap-10 items-center">
+                        <div className="grid grid-cols-[0.5fr_1.5fr] gap-3 items-start">
 
                             <div className="m-4">
-                                <div className="flex items-center justify-center">
+                                <div className="flex items-center justify-center h-[143px] w-[180px]">
                                     <img
                                         src="src/assets/internship.jpg"
                                         alt="Internship"
-                                        className="w-[180px] h-[143px] rounded-sm bg-th-white object-cover border border-th-descrip hover:scale-105 transition duration-300"
+                                        className="h-full w-auto rounded-sm bg-th-white object-cover border border-th-descrip hover:scale-105 transition duration-300"
                                     />
                                 </div>
                             </div>
 
                             <div className="m-4">
-                                <div className="flex flex-col gap-3">
+    <div className="flex h-full flex-col items-start gap-4">
 
-                                    <span className="text-md font-bold text-th-white">
-                                        Internship
-                                    </span>
+        {/* Top */}
+        <div className="flex flex-col">
+            <span className="text-md font-bold text-th-white">
+                Internship
+            </span>
 
-                                    <time className="text-sm font-medium text-th-border">
-                                        February – April 2026
-                                    </time>
+            <time className="text-sm font-medium text-th-border">
+                February – April 2026
+            </time>
+        </div>
 
-                                    <p className="text-sm font-medium text-justify text-th-owhite">
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua.
-                                    </p>
+        {/* Bottom */}
+        <div className="flex flex-col gap-5">
+            <p className="text-sm font-medium text-justify text-th-owhite">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Sed do eiusmod tempor incididunt ut labore et dolore magna
+                aliqua.
+            </p>
+        </div>
 
-                                </div>
-                            </div>
-
-                        </div>
+    </div>
+</div>
+</div>
 
                     )}
 
                     {activeTab === "Education" && (
 
-                        <div className="grid grid-cols-[0.5fr_1.5fr] gap-10 items-center">
+                        <div className="grid grid-cols-[0.5fr_1.5fr] gap-3 items-start">
 
                             <div className="m-4">
                                 <div className="flex items-center justify-center">
                                     <img
                                         src="src/assets/dlsl.png"
                                         alt="College"
-                                        className="w-[180px] h-[143px] rounded-sm bg-th-white object-cover border border-th-descrip hover:scale-105 transition duration-300"
+                                        className="h-full w-auto rounded-sm bg-th-white object-cover border border-th-descrip hover:scale-105 transition duration-300"
                                     />
                                 </div>
                             </div>
 
-                            <div className="m-4">
-                                <div className="flex flex-col gap-3">
+    <div className="m-4">
+    <div className="flex h-full flex-col items-start gap-4">
 
-                                    <span className="text-md font-bold text-th-white">
-                                        Internship
-                                    </span>
+        {/* Top */}
+        <div className="flex flex-col">
+            <span className="text-md font-bold text-th-white">
+                De La Salle Lipa
+            </span>
 
-                                    <time className="text-sm font-medium text-th-border">
-                                        February – April 2026
-                                    </time>
+            <time className="text-sm font-medium text-th-border">
+                June 2023 – Present
+            </time>
+        </div>
 
-                                    <p className="text-sm font-medium text-justify text-th-owhite">
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua.
-                                    </p>
+        {/* Bottom */}
+        <div className="flex flex-col gap-10">
+            <p className="text-sm font-medium text-justify text-th-owhite">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Sed do eiusmod tempor incididunt ut labore et dolore magna
+                aliqua.
+            </p>
+        </div>
 
-                                </div>
-                            </div>
-
-                        </div>
+    </div>
+</div>
+</div>
 
                     )}
 
