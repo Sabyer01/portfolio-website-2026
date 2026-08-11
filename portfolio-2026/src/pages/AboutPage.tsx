@@ -7,8 +7,7 @@ export default function AboutPage() {
     const [activeTab, setActiveTab] = useState(TABS[0]);
 
     return (
-        <main id="about" className="min-h-screen w-full bg-th-black flex flex-col items-center justify-center"
-        >
+        <main id="about" className="min-h-screen w-full bg-th-black flex flex-col items-center justify-center">
             <div className="relative w-full max-w-4xl mx-auto">
                 <div className='items-left justify-center py-5 text-lg tracking-[0.2em] font-bold uppercase text-th-owhite'>Experience </div>
 
@@ -17,7 +16,7 @@ export default function AboutPage() {
 
                 {/* ================= ABOUT ME (STATIC) ================= */}
 
-                <div className="grid grid-cols-[0.55fr_1.45fr] gap-3 items-start py-10">
+                <div className="grid grid-cols-[0.55fr_1.45fr] gap-3 items-start py-6">
 
                     <div className="m-4">
                         <div className="flex items-center justify-center">
@@ -29,7 +28,7 @@ export default function AboutPage() {
                         </div>
                     </div>
 
-                    <div className="m-4">
+                    <div className="m-3">
     <div className="flex h-full flex-col justify-between items-start">
 
         {/* Top */}
@@ -38,7 +37,7 @@ export default function AboutPage() {
                 Xavier Gelligan
             </span>
 
-             <time className="text-sm font-medium text-th-border">
+             <time className="text-sm font-normal text-th-border">
                                         Fullstack Developer
             </time>
 
@@ -46,14 +45,14 @@ export default function AboutPage() {
 
         {/* Bottom */}
         <div className="flex flex-col gap-2 pt-4">
-            <p className="text-sm font-medium text-justify text-th-owhite">
+            <p className="text-sm font-normal text-justify text-th-owhite">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Sed do eiusmod tempor incididunt ut labore et dolore magna
                 aliqua. Ut enim ad minim veniam, quis nostrud exercitation
                 ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>
 
-            <p className="text-sm font-medium text-justify text-th-owhite">
+            <p className="text-sm font-normal text-justify text-th-owhite">
                 Duis aute irure dolor in reprehenderit in voluptate velit
                 esse cillum dolore eu fugiat nulla pariatur.
                 Excepteur sint occaecat cupidatat non proident.
@@ -82,7 +81,7 @@ export default function AboutPage() {
 
                 {/* ================= CHANGING CONTENT ================= */}
 
-                <div className="py-10">
+                <div className="py-6">
 
                     {activeTab === "Internship" && (
 
@@ -103,18 +102,18 @@ export default function AboutPage() {
 
         {/* Top */}
         <div className="flex flex-col">
-            <span className="text-md font-bold text-th-white">
+            <span className="text-md font-medium text-th-white">
                 Internship
             </span>
 
-            <time className="text-sm font-medium text-th-border">
+            <time className="text-sm font-normal text-th-border">
                 February – April 2026
             </time>
         </div>
 
         {/* Bottom */}
-        <div className="flex flex-col gap-5">
-            <p className="text-sm font-medium text-justify text-th-owhite">
+        <div className="flex flex-col">
+            <p className="text-sm font-normal text-justify text-th-owhite">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Sed do eiusmod tempor incididunt ut labore et dolore magna
                 aliqua.
@@ -146,18 +145,18 @@ export default function AboutPage() {
 
         {/* Top */}
         <div className="flex flex-col">
-            <span className="text-md font-bold text-th-white">
+            <span className="text-md font-medium text-th-white">
                 De La Salle Lipa
             </span>
 
-            <time className="text-sm font-medium text-th-border">
+            <time className="text-sm font-normal text-th-border">
                 June 2023 – Present
             </time>
         </div>
 
         {/* Bottom */}
-        <div className="flex flex-col gap-10">
-            <p className="text-sm font-medium text-justify text-th-owhite">
+        <div className="flex flex-col">
+            <p className="text-sm font-normal text-justify text-th-owhite">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Sed do eiusmod tempor incididunt ut labore et dolore magna
                 aliqua.

@@ -13,7 +13,7 @@ export default function Tabs({
         <div className="w-full bg-th-black flex justify-center pt-10">
             <div className="w-full max-w-4xl">
 
-                <div className="flex gap-4">
+                <div className="flex gap-0">
 
                     {tabs.map((tab) => {
                         const active = activeTab === tab;
