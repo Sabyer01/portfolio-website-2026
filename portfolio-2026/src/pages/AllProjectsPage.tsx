@@ -29,8 +29,8 @@ export default function ProjectsPage(){
 
                         {/* Project 2 */}
                         <div className='flex flex-col mt-10'>
-                        <div className='rounded-sm border border-th-owhite bg-th-owhite w-full h-72 items-center justify-center flex'>
-                        <img src="https://via.placeholder.com/400x200" alt="Project 2" className='w-full h-auto object-cover hover:scale-105 transition duration-300' />
+                        <div className='rounded-sm border-1 border-th-white/30 bg-th-header/30 w-full h-72 items-center justify-center flex'>
+                        <img src="src/assets/moviedex_dashboard.png" alt="Project 2" className='w-full h-auto object-cover hover:scale-105 transition duration-300' />
                         </div>
                         
                         <span className='text-md py-3'>Project 2</span>
@@ -41,8 +41,8 @@ export default function ProjectsPage(){
 
                         {/* Project 2 */}
                         <div className='flex flex-col mt-10'>
-                        <div className='rounded-sm border border-th-owhite bg-th-owhite w-full h-72 items-center justify-center flex'>
-                        <img src="https://via.placeholder.com/400x200" alt="Project 2" className='w-full h-auto object-cover hover:scale-105 transition duration-300' />
+                        <div className='rounded-sm border border-th-white/30 bg-th-header/30 w-full h-72 items-center justify-center flex'>
+                        <img src="src/assets/moviedex_editmovie.png" alt="Project 2" className='w-full h-auto object-cover hover:scale-105 transition duration-300' />
                         </div>
                         
                         <span className='text-md py-3'>Project 2</span>
@@ -53,8 +53,8 @@ export default function ProjectsPage(){
 
                         {/* Project 2 */}
                         <div className='flex flex-col mt-10'>
-                        <div className='rounded-sm border border-th-owhite bg-th-owhite w-full h-72 items-center justify-center flex'>
-                        <img src="https://via.placeholder.com/400x200" alt="Project 2" className='w-full h-auto object-cover hover:scale-105 transition duration-300' />
+                        <div className='rounded-sm border border-th-white/30 bg-th-header/30 w-full h-72 items-center justify-center flex'>
+                        <img src="src/assets/moviedex_login.png" alt="Project 2" className='w-full h-auto object-cover hover:scale-105 transition duration-300' />
                         </div>
                         
                         <span className='text-md py-3'>Project 2</span>

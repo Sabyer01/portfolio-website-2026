@@ -1,6 +1,7 @@
 import AboutPage from './pages/AboutPage';
+import AllProjects from './pages/DetailedProjectsPage';
 import ExpertisePage from './pages/ExpertisePage';
-import ProjectsPage from './pages/ProjectsPage';
+import ProjectsPage from './pages/AllProjectsPage';
 
 export default function App() {
   return (
@@ -8,6 +9,7 @@ export default function App() {
     <AboutPage />
     <ExpertisePage />
     <ProjectsPage />
+    <AllProjects />
     </>
   );
 };

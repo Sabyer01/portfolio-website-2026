@@ -7,10 +7,10 @@ export default function ExpertisePage(){
                 {/* Top Divider */}
                 <div className="footer-divider bg-th-border h-px w-full" />
 
-                <div className='gap-10 mb-4 py-6'>
+                <div className='gap-10 mb-4 py-4'>
                     <div className='text-sm font-semibold uppercase tracking-[0.18em] text-th-owhite'> Frontend</div>
-                    <section className='flex flex-wrap gap-3 py-3'>
-                        <span className='rounded-sm border max-w-xs  bg-transparent px-3 py-1.5 font-mono 
+                    <section className='flex flex-wrap gap-3 py-2'>
+                        <span className='rounded-sm border max-w-xs  bg-transparent justify-center  items-center px-3 py-1.5 font-mono 
                         text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>JavaScript</span>
                         <span className='rounded-sm border max-w-xs  bg-transparent px-3 py-1.5 font-mono 
                         text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>TypeScript</span>
@@ -26,7 +26,7 @@ export default function ExpertisePage(){
             
 
                     <div className='text-sm font-semibold uppercase tracking-[0.18em] text-th-owhite mt-6'> Backend</div>
-                    <section className='flex flex-wrap gap-3 py-3'>
+                    <section className='flex flex-wrap gap-3 py-2'>
                         <span className='rounded-sm border max-w-xs  bg-transparent px-3 py-1.5 font-mono 
                         text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>Python</span>
                         <span className='rounded-sm border max-w-xs  bg-transparent px-3 py-1.5 font-mono 
@@ -40,7 +40,7 @@ export default function ExpertisePage(){
                     </section>
 
                     <div className='text-sm font-semibold uppercase tracking-[0.18em] text-th-owhite mt-6'>Database</div>
-                    <section className='flex flex-wrap gap-3 py-3'>
+                    <section className='flex flex-wrap gap-3 py-2'>
                         <span className='rounded-sm border max-w-xs  bg-transparent px-3 py-1.5 font-mono 
                         text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>MongoDB</span>
                         <span className='rounded-sm border max-w-xs  bg-transparent px-3 py-1.5 font-mono 
@@ -50,7 +50,7 @@ export default function ExpertisePage(){
                     </section>
 
                     <div className='text-sm font-semibold uppercase tracking-[0.18em] text-th-owhite mt-6'>AI & Machine Learning</div>
-                    <section className='flex flex-wrap gap-3 py-3'>
+                    <section className='flex flex-wrap gap-3 py-2'>
                         <span className='rounded-sm border max-w-xs  bg-transparent px-3 py-1.5 font-mono 
                         text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>NumPy</span>
                         <span className='rounded-sm border max-w-xs  bg-transparent px-3 py-1.5 font-mono 
@@ -68,7 +68,7 @@ export default function ExpertisePage(){
                     </section>
 
                     <div className='text-sm font-semibold uppercase tracking-[0.18em] text-th-owhite mt-6'>Developer Tools</div>
-                    <section className='flex flex-wrap gap-3 py-3'>
+                    <section className='flex flex-wrap gap-3 py-2'>
                         <span className='rounded-sm border max-w-xs  bg-transparent px-3 py-1.5 font-mono 
                         text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>Git</span>
                         <span className='rounded-sm border max-w-xs  bg-transparent px-3 py-1.5 font-mono 
@@ -89,7 +89,7 @@ export default function ExpertisePage(){
 
                     
 
-                    <div className="footer-divider bg-th-border h-px w-full mt-6" />
+                    <div className="footer-divider bg-th-border h-px w-full mt-4" />
 
 
                 </div>
