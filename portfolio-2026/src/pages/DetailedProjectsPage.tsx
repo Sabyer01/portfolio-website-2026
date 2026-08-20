@@ -23,7 +23,7 @@ export default function AllProjects() {
                     
                     {/* Tech Stack and Date*/}
                         <div className='flex flex-row'>
-                        <section className='mt-3 flex flex-wrap gap-3'>
+                        <section className='mt-6 flex flex-wrap gap-3'>
                             
                             <span className='rounded-sm border max-w-xs  bg-transparent px-3 py-1.5 font-normal 
                                 text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'> February - April 2026</span>
@@ -41,16 +41,16 @@ export default function AllProjects() {
                         </div>
                         
                     {/* Descrip */}
-                    <div className='mt-3'>
+                    <div className='mt-6'>
                     <h1 className='text-th-owhite text-md font-semibold mb-2'>Description</h1>
-                    <p className='text-th-lgray/80 text-justify text-sm'> A mobile app that reads data from smart plugs — outlet adapters that measure 
+                    <p className='text-th-lgray/80 text-justify text-md'> A mobile app that reads data from smart plugs — outlet adapters that measure 
                         each appliance's consumption to give households real-time, appliance-level insight into their electricity 
                         use, predicting monthly bills with machine learning and recommending simple ways to cut costs.</p>
                     </div>
 
-                    <div className='mt-3'>
+                    <div className='mt-6'>
                     <h1 className='text-th-owhite text-md font-semibold mb-2'>Contributions</h1>
-                    <span className='px-5 flex flex-col gap-2 text-sm'>
+                    <span className='px-5 flex flex-col gap-2 text-md'>
                     <li className='text-th-lgray/80 text-justify'> Developed the frontend of the mobile application using React Native and TypeScript, ensuring a responsive and user-friendly interface.</li>
                     <li className='text-th-lgray/80 text-justify'> Implemented the bill prediction feature using linear regression, allowing users to forecast their monthly electricity expenses based on historical data.</li>
                     <li className='text-th-lgray/80 text-justify'> Integrated a recommendation system that provides users with actionable insights to reduce energy consumption and lower their electricity bills.</li>
@@ -62,9 +62,9 @@ export default function AllProjects() {
                 
 
 
-            <div className='mt-3 footer-divider bg-th-border h-px w-full' />
+            <div className='mt-6 footer-divider bg-th-border h-px w-full' />
 
-            <div className='mt-3'>
+            <div className='mt-6'>
                 <span className='text-th-owhite text-md font-semibold mb-2'>Other Projects</span>
 
                 <div className='grid grid-cols-2 gap-10 mt-3'>
