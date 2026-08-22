@@ -7,34 +7,55 @@ type TimelineEntry = {
     date: string;
     title: string;
     subtitle: string;
-    description: string;
+    description: React.ReactNode;
 };
 
 const TIMELINE: Record<string, TimelineEntry[]> = {
     Internship: [
         {
-            date: "2026",
-            title: "Internship",
-            subtitle: "Company Name",
+            date: "February 2026 - April 2026",
+            title: "Asia United Bank Corporation",
+            subtitle: "IT Intern - AI Model Engineer",
             description:
-                "Worked on developing and maintaining web applications.",
+            <>
+                ● Developed and evaluated multiple machine learning models, including Logistic Regression,
+                Neural Network, XGBoost, RandomForest, and LightGBM, to predict good or bad behavior based
+                on their demographics, and etc.
+                <br/>
+                ● Implemented an interactive dashboard using Streamlit and integrated using FastAPI for efficient
+                and scalable deployment within the company.
+
+
+            </>
         },
     ],
     
     Education: [
         {
             date: "2022 — 2026",
-            title: "BS Information Technology",
-            subtitle: "University Name",
+            title: "De La Salle Lipa",
+            subtitle: "Bachelor of Science in Computer Science",
             description:
-                "Focused on web development, software engineering and databases.",
+            <>
+                • Graduated and got my diploma in Bachelor of Science major in Internet of Things
+                <br />
+                • Consistent Dean's Lister 
+                <br />
+                • Best Thesis Awardee (Bronze)
+            </>
+       
         },
         {
             date: "2020 — 2022",
-            title: "Senior High School",
-            subtitle: "School Name",
+            title: "First Asia Institute of Technology and Humanities",
+            subtitle: "Senior High School - STEM",
             description:
-                "Information and Communications Technology strand.",
+                <>
+                • Developed my interest in programming and technology through various projects and coursework.
+                <br />
+                • Consistent Honor Student 
+            </>
+
         },
     ],
 };
@@ -143,7 +164,7 @@ export default function AboutPage() {
                                         {entry.subtitle}
                                     </span>
 
-                                    <p className="text-sm text-th-lgray/80 mt-2">
+                                    <p className="text-sm text-th-lgray/80 mt-2 gap-1 leading-relaxed">
                                         {entry.description}
                                     </p>
                                 </div>
