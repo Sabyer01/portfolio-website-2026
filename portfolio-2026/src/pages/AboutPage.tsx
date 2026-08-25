@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Tabs from "../components/Tabs";
+import diploma from "../assets/diploma.jpg";
 
 const TABS = ["Internship", "Education"];
 
@@ -65,12 +66,12 @@ export default function AboutPage() {
     const entries = TIMELINE[activeTab] ?? [];
 
     return (
-        <main id="about" className="min-h-screen w-full bg-th-black flex flex-col items-center justify-center">
-            <div className="relative w-full max-w-4xl mx-auto">
-                <div className='items-left justify-center text-lg tracking-wide font-bold uppercase text-th-owhite/90'>About </div>
+        <main id="about" className="w-full">
+            <div className="relative w-full max-w-4xl mx-auto mt-10">
+                <div className='text-lg tracking-wide font-bold uppercase text-th-heading'>About </div>
 
                 {/* Top Divider */}
-                <div className="footer-divider bg-th-border/40 h-px w-full mt-1" />
+                <div className="footer-divider bg-th-line/40 h-px w-full mt-1" />
 
                 {/* ================= ABOUT ME (STATIC) ================= */}
 
@@ -79,9 +80,9 @@ export default function AboutPage() {
                     <div className="m-2">
                         <div className="flex items-center justify-center">
                             <img
-                                src="src/assets/diploma.jpg"
+                                src={diploma}
                                 alt="Profile"
-                                className="h-auto w-48 rounded-sm object-cover border border-th-descrip hover:scale-105 transition duration-300"
+                                className="h-auto w-48 rounded-sm object-cover border border-th-line/40 hover:scale-105 transition duration-300"
                             />
                         </div>
                     </div>
@@ -91,39 +92,50 @@ export default function AboutPage() {
 
                             {/* Top */}
                             <div className='flex flex-col'>
-                                <span className="text-md font-bold text-th-white">
-                                    Xavier Gelligan
+                                <span className="text-2xl font-bold text-th-heading">
+                                    Hello, I'm Xavier Gelligan
                                 </span>
-
-                                <time className="text-sm font-normal text-th-border">
-                                    Fullstack Developer
-                                </time>
 
                                 {/* Bottom */}
                                 <div className="flex flex-col gap-2 pt-4">
-                                    <p className="text-md font-normal text-justify text-th-owhite">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Sed do eiusmod tempor incididunt ut labore et dolore magna
-                                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                    </p>
+                                    <p className="text-md font-normal text-justify text-th-muted">
+                                    I am an aspiring{" "}
+                                    <span className="underline underline-offset-4">
+                                        data scientist
+                                    </span>{" "}
+                                    with a passion for developing innovative,{" "}
+                                    <span className="underline underline-offset-4">
+                                        data-driven solutions
+                                    </span>{" "}
+                                    with technology that can help individuals and businesses in their everyday endeavors.
+                                </p>
 
-                                    <p className="text-md font-normal text-justify text-th-owhite">
-                                        Duis aute irure dolor in reprehenderit in voluptate velit
-                                        esse cillum dolore eu fugiat nulla pariatur.
-                                        Excepteur sint occaecat cupidatat non proident.
-                                    </p>
+                                    <p className="text-md font-normal text-justify text-th-muted">
+                                    I pursue to develop{" "}
+                                    <span className="underline underline-offset-4">
+                                        practical and unique solutions
+                                    </span>{" "}
+                                    that will lead to a better decision-making process.
+                                </p>
+
+                                <p className="text-md font-normal text-justify text-th-muted">
+                                    I got my degree in Bachelor of Science in {" "}
+                                    <span className="underline underline-offset-4">Computer Science</span> from 
+                                    De La Salle Lipa, where innovation meets technology and excellence.
+                                </p>
+
+                                    
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div className="footer-divider bg-th-border/40 h-px w-full" />
+                <div className="footer-divider bg-th-line/40 h-px w-full" />
 
                 {/* ================= TIMELINE (TABBED) ================= */}
-                <div className='items-left justify-center text-lg tracking-wide font-bold uppercase text-th-owhite/90 mt-10'>Experience </div>
-                <div className="footer-divider bg-th-border/40 h-px w-full mt-1" />
+                <div id="experience" className='items-left justify-center text-lg tracking-wide font-bold uppercase text-th-heading mt-10'>Experience </div>
+                <div className="footer-divider bg-th-line/40 h-px w-full mt-1" />
                 <div className="flex flex-row gap-3 py-0">
                     
                     
@@ -144,7 +156,7 @@ export default function AboutPage() {
                                 <div className="relative w-4 shrink-0 self-stretch">
 
                                     {/* Vertical line */}
-                                    <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[0.1px] bg-th-border/40" />
+                                    <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[0.1px] bg-th-line/40" />
 
                                     {/* Circle */}
                                     
@@ -152,19 +164,19 @@ export default function AboutPage() {
 
                                 {/* Text */}
                                 <div className="py-6">
-                                    <time className="text-xs text-th-border">
+                                    <time className="text-xs text-th-faint">
                                         {entry.date}
                                     </time>
 
-                                    <h3 className="text-md font-semibold text-th-white mt-1">
+                                    <h3 className="text-md font-semibold text-th-heading mt-1">
                                         {entry.title}
                                     </h3>
 
-                                    <span className="text-sm text-th-border">
+                                    <span className="text-sm text-th-faint">
                                         {entry.subtitle}
                                     </span>
 
-                                    <p className="text-sm text-th-lgray/80 mt-2 gap-1 leading-relaxed">
+                                    <p className="text-sm text-th-muted mt-2 gap-1 leading-relaxed">
                                         {entry.description}
                                     </p>
                                 </div>

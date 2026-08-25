@@ -22,8 +22,8 @@ export default function Tabs({
                         className={`relative w-full px-6 py-4 text-left text-sm tracking-wide font-bold uppercase transition-all duration-300 cursor-pointer
                         ${
                             active
-                                ? "bg-th-theme/10 text-th-white rounded-sm"
-                                : "text-th-border hover:text-th-white hover:bg-[#141414] rounded-sm"
+                                ? "bg-th-theme/10 text-th-heading rounded-sm"
+                                : "text-th-faint hover:text-th-heading hover:bg-th-surface/60 rounded-sm"
                         }`}
                     >
                         {/* Left highlight */}

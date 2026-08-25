@@ -1,100 +1,150 @@
-import { ArrowUpRight } from "lucide-react";
-export default function ProjectsPage(){
-    return (
-    <div className='w-full min-h-screen bg-th-black'>
-        <div className='w-full max-w-4xl py-10 mx-auto'>
+import { useEffect, useRef, useState } from "react";
+import { ArrowUpRight, ChevronDown, ChevronUp } from "lucide-react";
+import { Link, useSearchParams } from "react-router-dom";
+import { PROJECTS, type Project } from "../data/projects";
 
-                <div className='justify-between flex flex-row'>
-                    <div className=' text-lg tracking-wide font-bold uppercase text-th-owhite/90'>Projects</div>
-                    
-                    <div className=' text-lg tracking-wide font-bold uppercase text-th-owhite/90' >View All Projects</div>
-                        
-                
+/** How many projects are shown before the user asks for more. */
+const INITIAL_VISIBLE = 3;
+
+/** Tech chips shown per card before collapsing the rest into a "+n". */
+const MAX_VISIBLE_TECH = 4;
+
+function ProjectRow({ project, index }: { project: Project; index: number }) {
+    const cover = project.images[0];
+    const visibleTech = project.tech.slice(0, MAX_VISIBLE_TECH);
+    const hiddenTechCount = project.tech.length - visibleTech.length;
+
+    return (
+        <div className={`relative flex flex-row gap-6 ${index === 0 ? "mt-6" : "mt-12"}`}>
+
+            {/* Background Number */}
+            <span className="absolute bottom-0 right-0 text-8xl font-bold text-th-white/5 pointer-events-none select-none">
+                {String(index + 1).padStart(2, "0")}
+            </span>
+
+            {/* Thumbnail */}
+            <Link
+                to={`/projects/${project.slug}`}
+                className="shrink-0 rounded-sm border border-th-line/30 bg-th-surface/30 w-64 h-40 items-center justify-center flex overflow-hidden"
+            >
+                <img
+                    src={cover?.src}
+                    alt={cover?.alt ?? project.shortTitle}
+                    className="w-full h-full object-cover hover:scale-105 transition duration-300"
+                />
+            </Link>
+
+            {/* Details */}
+            <div className="flex flex-1 flex-col justify-start gap-2">
+
+                <div className="flex flex-row justify-between items-start gap-4">
+                    <Link
+                        to={`/projects/${project.slug}`}
+                        className="text-xl font-bold text-th-text hover:text-th-heading transition duration-300"
+                    >
+                        {project.shortTitle}
+                    </Link>
+
+                    <Link
+                        to={`/projects/${project.slug}`}
+                        className="shrink-0 flex items-center gap-1 text-sm text-th-muted hover:text-th-heading transition duration-300"
+                    >
+                        View Details
+                        <ArrowUpRight size={16} />
+                    </Link>
+                </div>
+
+                <ul className="w-full flex flex-wrap items-start gap-2">
+                    {visibleTech.map((tech) => (
+                        <li
+                            key={tech}
+                            className="rounded-sm border border-th-line/30 text-xs text-th-muted py-1.5 px-3"
+                        >
+                            {tech}
+                        </li>
+                    ))}
+
+                    {hiddenTechCount > 0 && (
+                        <li className="rounded-sm border border-th-line/30 text-xs text-th-muted py-1.5 px-3">
+                            +{hiddenTechCount}
+                        </li>
+                    )}
+                </ul>
+
+                <p className="text-th-muted line-clamp-3 mt-2">
+                    {project.description}
+                </p>
+
+            </div>
+        </div>
+    );
+}
+
+export default function ProjectsPage() {
+    const [searchParams] = useSearchParams();
+    const sectionRef = useRef<HTMLDivElement>(null);
+
+    // The list always starts collapsed to INITIAL_VISIBLE, however we arrived here.
+    const [showAll, setShowAll] = useState(false);
+
+    // ?section=projects (used by the Back link) only scrolls — it never expands.
+    const scrollToSection = searchParams.get("section") === "projects";
+
+    useEffect(() => {
+        if (!scrollToSection) return;
+        sectionRef.current?.scrollIntoView({ block: "start", behavior: "instant" });
+    }, [scrollToSection]);
+
+    const total = PROJECTS.length;
+    const hiddenCount = Math.max(total - INITIAL_VISIBLE, 0);
+    const visibleProjects = showAll ? PROJECTS : PROJECTS.slice(0, INITIAL_VISIBLE);
+
+    return (
+        <div id="projects" ref={sectionRef} className="w-full scroll-mt-8">
+            <div className="w-full max-w-4xl mx-auto mt-20">
+
+                <div className="justify-between flex flex-row">
+                    <div className="text-lg tracking-wide font-bold uppercase text-th-heading">
+                        Projects
+                    </div>
                 </div>
 
                 {/* Top Divider */}
-            <div className="footer-divider bg-th-border/40 h-px w-full mt-1" />
-                <div className='grid grid-cols-2 gap-10 mt-6'>
-                    <div className='flex flex-col'>
-                    
-                        {/* Project 1 */}
-                        <div className='rounded-sm border-1 border-th-white/30 bg-th-header/30 w-full h-72 items-center justify-center flex overflow-hidden'>
-                            <img src="src/assets/moviedex_addmovie.png" alt="Project 1" className='w-full h-auto object-cover hover:scale-105 transition duration-300' />
-                        </div>
-                        
-                        <span className='text-md py-3 text-th-owhite'>Project 1</span>
-                        <ul className=' w-full flex flex-wrap gap-2 items-start'>
-                            <li className='rounded-sm border text-sm text-th-owhite/70 items-center justify-center py-1 px-2'>React</li>
-                            <li className='rounded-sm border text-sm text-th-owhite/70 items-center justify-center py-1 px-2'>TypeScript</li>
-                            <li className='rounded-sm border text-sm text-th-owhite/70 items-center justify-center py-1 px-2'>Tailwind CSS</li>
-                        </ul>
-                        <p className='text-th-owhite/70 line-clamp-2'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas sunt amet officia neque 
-                            aliquid alias ipsam eum sed illo nisi dolorum esse architecto perspiciatis, sequi laboriosam rerum fuga harum quam?</p>
-                    
-                        </div>
+                <div className="footer-divider bg-th-line/40 h-px w-full mt-1" />
 
-                        {/* Project 2 */}
-                        <div className='flex flex-col gap-2'>
-                        <div className='rounded-sm border-1 border-th-white/30 bg-th-header/30 w-full h-72 items-center justify-center flex overflow-hidden justify-between'>
-                        <img src="src/assets/moviedex_dashboard.png" alt="Project 2" className='w-full h-auto object-cover hover:scale-105 transition duration-300' />
-                        </div>
+                {/* Projects */}
+                <div className="flex flex-col">
+                    {visibleProjects.map((project, index) => (
+                        <ProjectRow key={project.slug} project={project} index={index} />
+                    ))}
+                </div>
 
-                
-                        <div className='flex flex-row justify-between'>
-                        <span className='text-xl font-bold text-th-owhite'>Credit Card Behavior Model</span>
-
-                        <a href="#" className="flex items-center gap-1 text-sm text-th-owhite/70 hover:text-th-white transition duration-300" >
-                        View Site
-                        <ArrowUpRight size={16} />
-                        </a>
-                        </div>
-                        <ul className=' w-full flex flex-wrap items-start gap-2 mt-2'>
-                            <li className='rounded-sm border text-sm text-th-owhite/70 items-center justify-center py-1 px-2'>React</li>
-                            <li className='rounded-sm border text-sm text-th-owhite/70 items-center justify-center py-1 px-2'>TypeScript</li>
-                            <li className='rounded-sm border text-sm text-th-owhite/70 items-center justify-center py-1 px-2'>Tailwind CSS</li>
-                        </ul>
-                        <p className='text-th-owhite/70 line-clamp-2'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas sunt amet officia neque 
-                            aliquid alias ipsam eum sed illo nisi dolorum esse architecto perspiciatis, sequi laboriosam rerum fuga harum quam?</p>
-
+                {/* Show More / Show Less — only rendered when something is actually hidden */}
+                {hiddenCount > 0 && (
+                    <div className="flex justify-center mt-12">
+                        <button
+                            onClick={() => setShowAll((previous) => !previous)}
+                            className="w-full flex items-center justify-center gap-2 py-3 border rounded-sm border-th-line/30 text-sm text-th-muted hover:text-th-heading hover:border-th-line/60 transition duration-300 cursor-pointer"
+                        >
+                            {showAll ? (
+                                <>
+                                    Show Less
+                                    <ChevronUp size={16} />
+                                </>
+                            ) : (
+                                <>
+                                    View More Projects ({hiddenCount})
+                                    <ChevronDown size={16} />
+                                </>
+                            )}
+                        </button>
                     </div>
+                )}
 
-                        {/* Project 3 */}
-                        <div className='flex flex-col mt-6'>
-                        <div className='rounded-sm border border-th-white/30 bg-th-header/30 w-full h-72 items-center justify-center flex overflow-hidden'>
-                        <img src="src/assets/moviedex_editmovie.png" alt="Project 3" className='w-full h-auto object-cover hover:scale-105 transition duration-300' />
-                        </div>
-                        
-                        <span className='text-md py-3 text-th-owhite'>Project 3</span>
-                        <ul className=' w-full flex flex-wrap gap-2 items-start'>
-                            <li className='rounded-sm border text-sm text-th-owhite/70 items-center justify-center py-1 px-2'>React</li>
-                            <li className='rounded-sm border text-sm text-th-owhite/70 items-center justify-center py-1 px-2'>TypeScript</li>
-                            <li className='rounded-sm border text-sm text-th-owhite/70 items-center justify-center py-1 px-2'>Tailwind CSS</li>
-                        </ul>
-                        <p className='text-th-owhite/70 line-clamp-2'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas sunt amet officia neque 
-                            aliquid alias ipsam eum sed illo nisi dolorum esse architecto perspiciatis, sequi laboriosam rerum fuga harum quam?</p>
-                         
-                        </div>
+                {/* Bottom Divider */}
+                <div className="footer-divider bg-th-line/40 h-px w-full mt-6" />
 
-                        {/* Project 4 */}
-                        <div className='flex flex-col mt-6'>
-                        <div className='rounded-sm border border-th-white/30 bg-th-header/30 w-full h-72 items-center justify-center flex overflow-hidden'>
-                        <img src="src/assets/moviedex_login.png" alt="Project 4" className='w-full h-auto object-cover hover:scale-105 transition duration-300' />
-                        </div>
-                        
-                        <span className='text-md py-3 text-th-owhite'>Project 4</span>
-                        <ul className=' w-full flex flex-wrap gap-2 items-start'>
-                            <li className='rounded-sm border text-sm text-th-owhite/70 items-center justify-center py-1 px-2'>React</li>
-                            <li className='rounded-sm border text-sm text-th-owhite/70 items-center justify-center py-1 px-2'>TypeScript</li>
-                            <li className='rounded-sm border text-sm text-th-owhite/70 items-center justify-center py-1 px-2'>Tailwind CSS</li>
-                        </ul>
-                        <p className='text-th-owhite/70 line-clamp-2'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas sunt amet officia neque 
-                            aliquid alias ipsam eum sed illo nisi dolorum esse architecto perspiciatis, sequi laboriosam rerum fuga harum quam?</p>
-                         
-                    </div>
-                       
             </div>
-             <div className="footer-divider bg-th-border/40 h-px w-full mt-6" />
         </div>
-    </div>
     );
-};
+}

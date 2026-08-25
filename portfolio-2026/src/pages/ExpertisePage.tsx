@@ -1,99 +1,76 @@
-export default function ExpertisePage(){
+import { getTechMeta } from "../data/techIcons";
+
+const STACKS: { group: string; items: string[] }[] = [
+    {
+        group: "Frontend",
+        items: ["JavaScript", "TypeScript", "React", "React Native", "Vite", "Tailwind CSS"],
+    },
+    {
+        group: "Backend",
+        items: ["Python", "Node.js", "FastAPI", "Flask", "Laravel"],
+    },
+    {
+        group: "Database",
+        items: ["MongoDB", "MySQL", "MariaDB"],
+    },
+    {
+        group: "AI & Machine Learning",
+        items: ["NumPy", "Pandas", "Scikit-learn", "TensorFlow", "Keras", "PyTorch", "Ollama"],
+    },
+    {
+        group: "Developer Tools",
+        items: ["Git", "GitHub", "Figma", "Postman", "Vercel", "Render", "Railway"],
+    },
+];
+
+function StackChip({ label }: { label: string }) {
+    const meta = getTechMeta(label);
+
     return (
-        <div className='w-full min-h-screen bg-th-black'>
-            <div className='w-full max-w-4xl py-10 mx-auto'>
-                <div className='items-left justify-center text-lg tracking-wide font-bold uppercase text-th-owhite/90'>Expertise</div>
-                
+        <span
+            className="group flex flex-row items-center gap-2 rounded-sm border border-th-line/30 bg-transparent px-3 py-1.5
+            text-[13px] text-th-muted hover:border-th-line/60 hover:text-th-heading transition duration-300"
+        >
+            {meta && (
+                <meta.Icon
+                    size={14}
+                    style={{ color: meta.color }}
+                    className="shrink-0 opacity-70 group-hover:opacity-100 transition duration-300"
+                    aria-hidden
+                />
+            )}
+            {label}
+        </span>
+    );
+}
+
+export default function ExpertisePage() {
+    return (
+        <div id="expertise" className='w-full'>
+            <div className='w-full max-w-4xl mx-auto mt-20'>
+                <div className='items-left justify-center text-lg tracking-wide font-bold uppercase text-th-heading'>Expertise</div>
+
                 {/* Top Divider */}
-                <div className="footer-divider bg-th-border/40 h-px w-full mt-1" />
+                <div className="footer-divider bg-th-line/40 h-px w-full mt-1" />
 
                 <div className='py-6 tracking-wide'>
-                    <div className='text-sm font-semibold uppercase text-th-owhite tracking-wide'> Frontend</div>
-                    <section className='flex flex-wrap gap-3 py-2'>
-                        <span className='rounded-sm border   bg-transparent justify-center  items-center px-3 py-1.5  
-                        text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>JavaScript</span>
-                        <span className='rounded-sm border   bg-transparent px-3 py-1.5  
-                        text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>TypeScript</span>
-                        <span className='rounded-sm border  bg-transparent px-3 py-1.5  
-                        text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>React</span>
-                        <span className='rounded-sm border  bg-transparent px-3 py-1.5 
-                        text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>React Native</span>
-                        <span className='rounded-sm border bg-transparent px-3 py-1.5 
-                        text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>Vite</span>
-                        <span className='rounded-sm border   bg-transparent px-3 py-1.5  
-                        text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>Tailwind CSS</span>
-                    </section>
-            
+                    {STACKS.map((stack, index) => (
+                        <div key={stack.group} className={index === 0 ? "" : "mt-6"}>
+                            <div className='text-sm font-semibold uppercase tracking-wide text-th-text'>
+                                {stack.group}
+                            </div>
 
-                    <div className='text-sm font-semibold uppercase tracking-wide text-th-owhite mt-6'> Backend</div>
-                    <section className='flex flex-wrap gap-3 py-2'>
-                        <span className='rounded-sm border   bg-transparent px-3 py-1.5  
-                        text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>Python</span>
-                        <span className='rounded-sm border   bg-transparent px-3 py-1.5 
-                        text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>Node.js</span>
-                        <span className='rounded-sm border   bg-transparent px-3 py-1.5 
-                        text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>FastAPI</span>
-                        <span className='rounded-sm border   bg-transparent px-3 py-1.5 
-                        text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>Flask</span>
-                        <span className='rounded-sm border  bg-transparent px-3 py-1.5  
-                        text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>Laravel</span>
-                    </section>
+                            <section className='flex flex-wrap gap-3 py-2'>
+                                {stack.items.map((item) => (
+                                    <StackChip key={`${stack.group}-${item}`} label={item} />
+                                ))}
+                            </section>
+                        </div>
+                    ))}
 
-                    <div className='text-sm font-semibold uppercase tracking-wide text-th-owhite mt-6'>Database</div>
-                    <section className='flex flex-wrap gap-3 py-2'>
-                        <span className='rounded-sm border  bg-transparent px-3 py-1.5 
-                        text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>MongoDB</span>
-                        <span className='rounded-sm border bg-transparent px-3 py-1.5 
-                        text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>MySQL</span>
-                        <span className='rounded-sm border  bg-transparent px-3 py-1.5 
-                        text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>MariaDB</span>
-                    </section>
-
-                    <div className='text-sm font-semibold uppercase tracking-wide text-th-owhite mt-6'>AI & Machine Learning</div>
-                    <section className='flex flex-wrap gap-3 py-2'>
-                        <span className='rounded-sm border   bg-transparent px-3 py-1.5 
-                        text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>NumPy</span>
-                        <span className='rounded-sm border  bg-transparent px-3 py-1.5 
-                        text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>Pandas</span>
-                        <span className='rounded-sm border  bg-transparent px-3 py-1.5 
-                        text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>Scikit-learn</span>
-                        <span className='rounded-sm border  bg-transparent px-3 py-1.5 
-                        text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>TensorFlow</span>
-                        <span className='rounded-sm border   bg-transparent px-3 py-1.5 
-                        text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>Keras</span>
-                        <span className='rounded-sm border  bg-transparent px-3 py-1.5 
-                        text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>PyTorch</span>
-                        <span className='rounded-sm border   bg-transparent px-3 py-1.5 
-                        text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>Ollama</span>
-                    </section>
-
-                    <div className='text-sm font-semibold uppercase tracking-wide text-th-owhite mt-6'>Developer Tools</div>
-                    <section className='flex flex-wrap gap-3 py-2'>
-                        <span className='rounded-sm border  bg-transparent px-3 py-1.5 
-                        text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>Git</span>
-                        <span className='rounded-sm border bg-transparent px-3 py-1.5 
-                        text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>GitHub</span>
-                        <span className='rounded-sm border   bg-transparent px-3 py-1.5 
-                        text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>Figma</span>
-                        <span className='rounded-sm border   bg-transparent px-3 py-1.5  
-                        text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>Postman</span>
-                        <span className='rounded-sm border   bg-transparent px-3 py-1.5 
-                        text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>Vercel</span>
-                        <span className='rounded-sm border  bg-transparent px-3 py-1.5 
-                        text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>Render</span>
-                        <span className='rounded-sm border  bg-transparent px-3 py-1.5 
-                        text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>Railway</span>
-                        <span className='rounded-sm border bg-transparent px-3 py-1.5
-                        text-[13px] text-th-lgray hover:border-th-border hover:text-th-owhite'>Render</span>
-                    </section>
-
-                    <div className="footer-divider bg-th-border/40 h-px w-full mt-6" />
+                    <div className="footer-divider bg-th-line/40 h-px w-full mt-6" />
                 </div>
-
-              
-
-                
             </div>
         </div>
     );
-};
+}
