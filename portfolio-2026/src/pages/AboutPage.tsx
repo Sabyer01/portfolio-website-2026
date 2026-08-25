@@ -52,7 +52,7 @@ const TIMELINE: Record<string, TimelineEntry[]> = {
             subtitle: "Senior High School - STEM",
             description:
                 <>
-                • Developed my interest in programming and technology through various projects and coursework.
+                • Developed my interest in programming and technology through various projects and tasks.
                 <br />
                 • Consistent Honor Student 
             </>
@@ -67,7 +67,7 @@ export default function AboutPage() {
 
     return (
         <main id="about" className="w-full">
-            <div className="relative w-full max-w-4xl mx-auto mt-10">
+            <div className="relative w-full max-w-4xl mx-auto mt-10 px-5 sm:px-6 lg:px-8">
                 <div className='text-lg tracking-wide font-bold uppercase text-th-heading'>About </div>
 
                 {/* Top Divider */}
@@ -75,7 +75,7 @@ export default function AboutPage() {
 
                 {/* ================= ABOUT ME (STATIC) ================= */}
 
-                <div className="grid grid-cols-[0.5fr_1.5fr] items-start py-6">
+                <div className="grid grid-cols-1 md:grid-cols-[0.5fr_1.5fr] items-start py-6">
 
                     <div className="m-2">
                         <div className="flex items-center justify-center">
@@ -136,12 +136,12 @@ export default function AboutPage() {
                 {/* ================= TIMELINE (TABBED) ================= */}
                 <div id="experience" className='items-left justify-center text-lg tracking-wide font-bold uppercase text-th-heading mt-10'>Experience </div>
                 <div className="footer-divider bg-th-line/40 h-px w-full mt-1" />
-                <div className="flex flex-row gap-3 py-0">
+                <div className="flex flex-col md:flex-row gap-3 py-0">
                     
                     
 
                     {/* Tabs stacked on the left, aligned to the text on the right */}
-                    <div className="basis-[27.5%] shrink-0 pt-1.5">
+                    <div className="w-full md:w-auto md:basis-[27.5%] shrink-0 pt-1.5">
                         <Tabs tabs={TABS} activeTab={activeTab} onChange={setActiveTab} />
                     </div>
 

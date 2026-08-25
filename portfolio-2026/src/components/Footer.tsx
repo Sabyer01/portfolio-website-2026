@@ -22,10 +22,10 @@ export default function Footer() {
 
     return (
         <div className="relative w-full mt-20 pb-10">
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8">
                 <div className="footer-divider bg-th-line/40 h-px w-full" />
 
-                <div className="flex justify-between gap-20 mt-6">
+                <div className="flex flex-col sm:flex-row sm:justify-between gap-10 sm:gap-20 mt-6">
 
                     {/* Left */}
                     <div className="justify-start items-start flex flex-col gap-2">
@@ -39,7 +39,7 @@ export default function Footer() {
                     </div>
 
                     {/* Right */}
-                    <div className="grid grid-cols-2 gap-10">
+                    <div className="grid grid-cols-2 gap-6 sm:gap-10">
 
                         {/* Quick Links */}
                         <div className="justify-start items-start flex flex-col gap-1">

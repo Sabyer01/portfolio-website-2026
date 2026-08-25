@@ -1,5 +1,3 @@
-import internship from "../assets/internship.jpg";
-import seventyOne from "../assets/71.jpg";
 import moviedexDashboard from "../assets/moviedex_dashboard.png";
 import moviedexAddMovie from "../assets/moviedex_addmovie.png";
 import moviedexEditMovie from "../assets/moviedex_editmovie.png";
@@ -15,6 +13,9 @@ import geltechHero from "../assets/geltech/hero.png";
 import geltechAbout from "../assets/geltech/about.png";
 import geltechProduct from "../assets/geltech/product.png";
 import geltechContact from "../assets/geltech/contact.png";
+import creditDashboard from "../assets/credit/dashboard.png";
+import creditModel from "../assets/credit/model_summary.png";
+import creditOptimal from "../assets/credit/optimal.png";
 
 export type ProjectImage = {
     src: string;
@@ -59,10 +60,10 @@ export const PROJECTS: Project[] = [
         period: "July 2026",
         tech: ["React", "TypeScript", "Tailwind CSS", "Vite", "Vercel"],
         images: [
-            { src: geltechHero, alt: "Portfolio landing page" },
-            { src: geltechAbout, alt: "Portfolio projects index" },
-            { src: geltechProduct, alt: "Portfolio projects index" },
-            { src: geltechContact, alt: "Portfolio projects index" },
+            { src: geltechHero, alt: "geltech_hero" },
+            { src: geltechAbout, alt: "geltech_about" },
+            { src: geltechProduct, alt: "geltech_product" },
+            { src: geltechContact, alt: "geltech_contact" },
         ],
         contributions: [
             "Designed responsive web interfaces optimized for mobile, tablet, and desktop, featuring a filterable product catalog with category/material filters, multi-image galleries, and detail views",
@@ -72,9 +73,9 @@ export const PROJECTS: Project[] = [
          liveUrl: "https://geltech-corp.vercel.app",
     },
     {
-        slug: "credit-card-behavior-model",
-        title: "Credit Card Behavior Model: Predicting Cardholder Risk with Gradient Boosted Trees",
-        shortTitle: "Credit Card Behavior Model",
+        slug: "credit-card-scoring-model",
+        title: "Credit Card Scoring Risk Prediction: Predicting Cardholder Risk with Gradient Boosted Trees",
+        shortTitle: "Credit Card Scoring Model",
         category: "Machine Learning",
         summary:
             "A scoring model that flags good and bad credit-card behavior from demographic and transactional signals, served through an interactive dashboard.",
@@ -83,14 +84,13 @@ export const PROJECTS: Project[] = [
         period: "February 2026 - April 2026",
         tech: ["Python", "TensorFlow", "Scikit-learn", "Streamlit", "FastAPI"],
         images: [
-            { src: internship, alt: "Model evaluation dashboard" },
-            { src: seventyOne, alt: "Feature importance breakdown" },
+            { src: creditDashboard, alt: "credit_dashboard" },
+            { src: creditModel, alt: "credit_model_summary" },
+             { src: creditOptimal, alt: "credit_optimal_summary" },
         ],
         contributions: [
-            "Developed and evaluated multiple machine learning models — Logistic Regression, Neural Network, XGBoost, RandomForest, and LightGBM — to predict good or bad cardholder behavior.",
-            "Engineered and cleaned demographic and transactional features, handling class imbalance to keep recall on high-risk cardholders usable.",
-            "Built an interactive dashboard with Streamlit so analysts could run scoring and inspect feature importance directly.",
-            "Wrapped the trained model in a FastAPI service for efficient and scalable deployment within the company.",
+            "Developed and evaluated multiple machine learning models, including Logistic Regression, Neural Network, XGBoost, RandomForest, and LightGBM, to predict good or bad behavior based on their demographics, and etc.",
+            "Implemented an interactive dashboard using Streamlit and integrated using FastAPI for efficientand scalable deployment within the company."
         ],
         // Internal bank tool — no public deployment.
     },
@@ -104,15 +104,15 @@ export const PROJECTS: Project[] = [
             "An IoT system that turns smart-plug readings into appliance-level insight, monthly bill forecasts, and savings recommendations.",
         description:
             "A mobile app that reads data from smart plugs — outlet adapters that measure each appliance's consumption to give households real-time, appliance-level insight into their electricity use, predicting monthly bills with machine learning and recommending simple ways to cut costs.",
-        period: "August 2025 - April 2026",
+        period: "August 2025 - November 2025",
         tech: ["React Native", "TypeScript", "Python", "FastAPI", "Scikit-learn", "MongoDB"],
         images: [
-            { src: homesenseThumb, alt: "HomeSense thumbnail overview" },
-            { src: homesenseLanding, alt: "HomeSense dashboard overview" },
-            { src: homesenseAppliances, alt: "HomeSense smart plug hardware setup" },
-            { src: homesenseBills, alt: "HomeSense monthly bill forecast" },
-            { src: homesenseModes, alt: "HomeSense appliance modes" },
-            { src: homesenseRecos, alt: "HomeSense savings recommendations" },
+            { src: homesenseThumb, alt: "homesense_dashboard" },
+            { src: homesenseLanding, alt: "homesense_landing" },
+            { src: homesenseAppliances, alt: "homesense_appliances" },
+            { src: homesenseBills, alt: "homesense_bills" },
+            { src: homesenseModes, alt: "homesense_modes" },
+            { src: homesenseRecos, alt: "homesense_recommendations" },
         ],
         contributions: [
             "Developed the frontend of the mobile application using React Native and TypeScript, ensuring a responsive and user-friendly interface.",
@@ -120,7 +120,7 @@ export const PROJECTS: Project[] = [
             "Integrated a recommendation system that provides users with actionable insights to reduce energy consumption and lower their electricity bills.",
             "Collaborated with the backend team to ensure seamless data flow between the mobile app and the smart plug devices, enhancing real-time monitoring capabilities.",
         ],
-        // Mobile app — no public web deployment.
+        liveUrl: "https://homesense-web.vercel.app/"
     },
     {
         slug: "moviedex",
@@ -131,14 +131,14 @@ export const PROJECTS: Project[] = [
             "A movie catalogue with authentication, full CRUD, and a dashboard for tracking everything you have watched.",
         description:
             "MovieDex is a full-stack web application for cataloguing films. It ships with token-based authentication, complete create/read/update/delete flows for movie entries, and a dashboard that summarises a user's library at a glance.",
-        period: "June 2025 - September 2025",
+        period: "June 2026",
         tech: ["React", "TypeScript", "Tailwind CSS", "Laravel", "MariaDB"],
         images: [
-            { src: moviedexLogin, alt: "MovieDex login screen" },
-            { src: moviedexRegister, alt: "MovieDex registration screen" },
-            { src: moviedexDashboard, alt: "MovieDex dashboard" },
-            { src: moviedexAddMovie, alt: "MovieDex add movie form" },
-            { src: moviedexEditMovie, alt: "MovieDex edit movie form" },
+            { src: moviedexLogin, alt: "moviedex_login" },
+            { src: moviedexRegister, alt: "moviedex_register" },
+            { src: moviedexDashboard, alt: "moviedex_dashboard" },
+            { src: moviedexAddMovie, alt: "moviedex_add_movie" },
+            { src: moviedexEditMovie, alt: "moviedex_edit_movie" },
             
         ],
         contributions: [

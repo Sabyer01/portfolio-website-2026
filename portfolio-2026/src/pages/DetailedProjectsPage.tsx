@@ -33,7 +33,7 @@ function ImageCarousel({ project }: { project: Project }) {
         <div className="mt-6">
 
             {/* Frame */}
-            <div className="group relative max-w-4xl h-108 mx-auto border border-th-line/30 bg-th-surface/30 rounded-sm flex justify-center items-center overflow-hidden">
+            <div className="group relative max-w-4xl h-56 sm:h-80 md:h-108 mx-auto border border-th-line/30 bg-th-surface/30 rounded-sm flex justify-center items-center overflow-hidden">
                 <img
                     key={current.src}
                     className="w-full h-full object-contain"
@@ -48,7 +48,7 @@ function ImageCarousel({ project }: { project: Project }) {
                             onClick={() => goTo(active - 1)}
                             aria-label="Previous image"
                             className="absolute left-3 top-1/2 -translate-y-1/2 rounded-sm border border-th-line/30 bg-th-bg/70 p-2 text-th-muted
-                            opacity-0 group-hover:opacity-100 hover:text-th-heading hover:border-th-line/60 transition duration-300 cursor-pointer"
+                            opacity-100 md:opacity-0 md:group-hover:opacity-100 hover:text-th-heading hover:border-th-line/60 transition duration-300 cursor-pointer"
                         >
                             <ChevronLeft size={18} />
                         </button>
@@ -58,7 +58,7 @@ function ImageCarousel({ project }: { project: Project }) {
                             onClick={() => goTo(active + 1)}
                             aria-label="Next image"
                             className="absolute right-3 top-1/2 -translate-y-1/2 rounded-sm border border-th-line/30 bg-th-bg/70 p-2 text-th-muted
-                            opacity-0 group-hover:opacity-100 hover:text-th-heading hover:border-th-line/60 transition duration-300 cursor-pointer"
+                            opacity-100 md:opacity-0 md:group-hover:opacity-100 hover:text-th-heading hover:border-th-line/60 transition duration-300 cursor-pointer"
                         >
                             <ChevronRight size={18} />
                         </button>
@@ -66,6 +66,25 @@ function ImageCarousel({ project }: { project: Project }) {
                 )}
             </div>
 
+            {/* Pagination — one step per image, so it sizes itself per project */}
+            {total > 1 && (
+                <div className="mt-3 flex items-center justify-center gap-2">
+                    {project.images.map((image, index) => (
+                        <button
+                            key={image.src + index}
+                            type="button"
+                            onClick={() => goTo(index)}
+                            aria-label={`Go to image ${index + 1} of ${total}`}
+                            aria-current={index === active}
+                            className={`h-1.5 rounded-sm transition-all duration-300 cursor-pointer ${
+                                index === active
+                                    ? "w-6 bg-th-line/80"
+                                    : "w-1.5 bg-th-line/30 hover:bg-th-line/60"
+                            }`}
+                        />
+                    ))}
+                </div>
+            )}
         </div>
     );
 }
@@ -161,7 +180,7 @@ export default function DetailedProjectsPage() {
 
     return (
         <div className="w-full">
-            <div className="w-full max-w-4xl mx-auto mt-6 pb-20">
+            <div className="w-full max-w-4xl mx-auto mt-6 pb-20 px-5 sm:px-6 lg:px-8">
 
                 <div className="justify-between flex flex-wrap items-center">
                     {/* Back to the projects section of the home page */}
@@ -190,7 +209,7 @@ export default function DetailedProjectsPage() {
                 </div>
 
 
-                <h1 className="block font-medium text-th-heading text-2xl text-justify mt-6">
+                <h1 className="block font-medium text-th-heading text-xl sm:text-2xl text-left sm:text-justify mt-6">
                     {project.title}
                 </h1>
 
@@ -224,7 +243,7 @@ export default function DetailedProjectsPage() {
                     {/* Description */}
                     <div className="mt-6">
                         <h2 className="text-th-heading text-md font-semibold mb-2">Description</h2>
-                        <p className="text-th-muted text-justify text-md">{project.description}</p>
+                        <p className="text-th-muted text-left sm:text-justify text-md">{project.description}</p>
                     </div>
 
                     {/* Contributions */}
@@ -232,7 +251,7 @@ export default function DetailedProjectsPage() {
                         <h2 className="text-th-heading text-md font-semibold mb-2">Contributions</h2>
                         <ul className="px-5 flex flex-col gap-2 text-md list-disc">
                             {project.contributions.map((contribution) => (
-                                <li key={contribution} className="text-th-muted text-justify">
+                                <li key={contribution} className="text-th-muted text-left sm:text-justify">
                                     {contribution}
                                 </li>
                             ))}
@@ -247,7 +266,7 @@ export default function DetailedProjectsPage() {
                 <div className="mt-6">
                     <span className="text-th-heading text-md font-semibold mb-2">Other Projects</span>
 
-                    <div className="grid grid-cols-2 gap-10 mt-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-10 mt-3">
                         {previous && <NeighbourCard project={previous} direction="previous" />}
                         {next && <NeighbourCard project={next} direction="next" />}
                     </div>

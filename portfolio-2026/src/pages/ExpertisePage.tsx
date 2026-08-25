@@ -47,7 +47,7 @@ function StackChip({ label }: { label: string }) {
 export default function ExpertisePage() {
     return (
         <div id="expertise" className='w-full'>
-            <div className='w-full max-w-4xl mx-auto mt-20'>
+            <div className='w-full max-w-4xl mx-auto mt-20 px-5 sm:px-6 lg:px-8'>
                 <div className='items-left justify-center text-lg tracking-wide font-bold uppercase text-th-heading'>Expertise</div>
 
                 {/* Top Divider */}

@@ -15,17 +15,17 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
     const hiddenTechCount = project.tech.length - visibleTech.length;
 
     return (
-        <div className={`relative flex flex-row gap-6 ${index === 0 ? "mt-6" : "mt-12"}`}>
+        <div className={`relative flex flex-col sm:flex-row gap-4 sm:gap-6 ${index === 0 ? "mt-6" : "mt-12"}`}>
 
             {/* Background Number */}
-            <span className="absolute bottom-0 right-0 text-8xl font-bold text-th-white/5 pointer-events-none select-none">
+            <span className="absolute bottom-0 right-0 text-6xl sm:text-8xl font-bold text-th-white/5 pointer-events-none select-none">
                 {String(index + 1).padStart(2, "0")}
             </span>
 
             {/* Thumbnail */}
             <Link
                 to={`/projects/${project.slug}`}
-                className="shrink-0 rounded-sm border border-th-line/30 bg-th-surface/30 w-64 h-40 items-center justify-center flex overflow-hidden"
+                className="shrink-0 rounded-sm border border-th-line/30 bg-th-surface/30 w-full h-48 sm:w-64 sm:h-40 items-center justify-center flex overflow-hidden"
             >
                 <img
                     src={cover?.src}
@@ -37,10 +37,10 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
             {/* Details */}
             <div className="flex flex-1 flex-col justify-start gap-2">
 
-                <div className="flex flex-row justify-between items-start gap-4">
+                <div className="flex flex-col sm:flex-row sm:justify-between items-start gap-1 sm:gap-4">
                     <Link
                         to={`/projects/${project.slug}`}
-                        className="text-xl font-bold text-th-text hover:text-th-heading transition duration-300"
+                        className="text-lg sm:text-xl font-bold text-th-text hover:text-th-heading transition duration-300"
                     >
                         {project.shortTitle}
                     </Link>
@@ -101,7 +101,7 @@ export default function ProjectsPage() {
 
     return (
         <div id="projects" ref={sectionRef} className="w-full scroll-mt-8">
-            <div className="w-full max-w-4xl mx-auto mt-20">
+            <div className="w-full max-w-4xl mx-auto mt-20 px-5 sm:px-6 lg:px-8">
 
                 <div className="justify-between flex flex-row">
                     <div className="text-lg tracking-wide font-bold uppercase text-th-heading">

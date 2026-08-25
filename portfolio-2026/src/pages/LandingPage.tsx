@@ -62,7 +62,7 @@ export default function LandingPage() {
                     <Icon
                         key={index}
                         size={size}
-                        className="absolute text-th-line/[0.1] animate-hero-float"
+                        className={`absolute text-th-line/[0.1] animate-hero-float ${size >= 40 ? "hidden sm:block" : ""}`}
                         style={{
                             top,
                             left,
@@ -74,13 +74,13 @@ export default function LandingPage() {
             </div>
 
             {/* ---------- Content ---------- */}
-            <div className="relative w-full max-w-4xl mx-auto px-2 py-24">
+            <div className="relative w-full max-w-4xl mx-auto px-5 py-16 sm:px-6 sm:py-24 lg:px-8">
                 {/* items-stretch keeps the portrait level with the text column */}
-                <div className="grid grid-cols-1 items-stretch gap-35 md:grid-cols-[1fr_0.65fr]">
+                <div className="grid grid-cols-1 items-stretch gap-10 md:grid-cols-[1fr_0.65fr] md:gap-20 lg:gap-35">
 
                     {/* ============ LEFT ============ */}
                     <div className="flex flex-col justify-center text-left">
-                        <h1 className="text-4xl font-bold tracking-tight text-th-heading">
+                        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-th-heading">
                             Xavier Gelligan
                         </h1>
 
@@ -97,7 +97,7 @@ export default function LandingPage() {
                             cursorClassName="animate-cursor-blink"
                             cursorBlinkDuration={0.55}
                             loop
-                            className="mt-3 text-xl text-th-muted"
+                            className="mt-3 text-lg sm:text-xl text-th-muted"
                         />
 
                         <div className="footer-divider bg-th-line/40 h-px w-full mt-6" />
@@ -132,7 +132,7 @@ export default function LandingPage() {
                                 </a>
 
                                 <a
-                                    href="/resume.pdf"
+                                    href="/Gelligan_Resume.pdf"
                                     target="_blank"
                                     rel="noreferrer noopener"
                                     className="flex items-center gap-2 text-th-muted hover:text-th-heading transition duration-300"
@@ -148,7 +148,7 @@ export default function LandingPage() {
 
                     {/* ============ RIGHT ============ */}
                     {/* The mask dissolves the bottom of the portrait into the page */}
-                    <div className="relative">
+                    <div className="relative mx-auto w-full max-w-[15rem] md:max-w-none">
                         <img
                             src={gradImg}
                             alt="Xavier Gelligan"
