@@ -108,14 +108,14 @@ export default function LandingPage() {
                             {/* First floor — where I am, and whether I'm available */}
                             <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
                                 <span className="flex items-center gap-2 text-th-muted">
-                                    <MapPin size={15} className="text-th-theme" />
+                                    <MapPin size={15} className="text-th-text" />
                                     Batangas, Philippines
                                 </span>
 
                                 <span className="flex items-center gap-2 text-th-muted">
                                     <span className="relative flex h-1.5 w-1.5">
-                                        <span className="absolute inline-flex h-full w-full rounded-full bg-th-theme opacity-75 animate-ping" />
-                                        <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-th-theme" />
+                                        <span className="absolute inline-flex h-full w-full rounded-full bg-th-text opacity-30 animate-ping" />
+                                        <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-th-text" />
                                     </span>
                                     Open to Work
                                 </span>
