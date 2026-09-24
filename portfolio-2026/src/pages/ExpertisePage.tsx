@@ -11,7 +11,7 @@ const STACKS: { group: string; items: string[] }[] = [
     },
     {
         group: "Database",
-        items: ["MongoDB", "MySQL", "MariaDB"],
+        items: ["MongoDB", "MySQL", "MariaDB", "PostgreSQL"],
     },
     {
         group: "AI & Machine Learning",
@@ -19,7 +19,7 @@ const STACKS: { group: string; items: string[] }[] = [
     },
     {
         group: "Developer Tools",
-        items: ["Git", "GitHub", "Figma", "Postman", "Vercel", "Render", "Railway"],
+        items: ["Git", "GitHub", "Figma", "Postman", "Docker", "Vercel", "Render", "Railway"],
     },
 ];
 

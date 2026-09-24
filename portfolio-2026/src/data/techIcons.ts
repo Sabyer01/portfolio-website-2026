@@ -28,6 +28,8 @@ import {
     SiTypescript,
     SiVercel,
     SiVite,
+    SiDocker,
+    SiPostgresql
 } from "react-icons/si";
 
 export type TechMeta = {
@@ -71,6 +73,8 @@ export const TECH_ICONS: Record<string, TechMeta> = {
     Vercel: { Icon: SiVercel, color: "#e5e5e5" },
     Render: { Icon: SiRender, color: "#46e3b7" },
     Railway: { Icon: SiRailway, color: "#c1c1ff" },
+    Docker: { Icon: SiDocker, color: "#2496ed" },
+    PostgreSQL: { Icon: SiPostgresql, color: "#336791" },
 };
 
 export function getTechMeta(label: string): TechMeta | undefined {
