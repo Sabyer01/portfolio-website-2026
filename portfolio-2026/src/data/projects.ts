@@ -56,7 +56,7 @@ export const PROJECTS: Project[] = [
         summary:
             "This site — a hand-built portfolio with a custom design system, routed project pages, and no template underneath.",
         description:
-            "A personal portfolio built from an empty Vite project. It uses a custom Tailwind theme, a data-driven project index that generates every detailed page from a single source, and a routing layer that lets each project link forward and backward through the catalogue.",
+            "A freelance website for Geltech Corporation, a technology-driven company that provides mechanical and engineering services such as laser cutting, precise tooling, and fabrication.",
         period: "July 2026",
         tech: ["React", "TypeScript", "Tailwind CSS", "Vite", "Vercel"],
         images: [
